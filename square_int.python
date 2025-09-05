@@ -1,0 +1,20 @@
+def is_square(n: int, m: int) -> bool:
+    """Check if n is the square
+    of some integer in the set
+    {1, 2, ..., m}.
+    >>> is_square(4, 3)
+    True
+    >>> is_square(9, 2)
+    False
+    """
+    if n == (m * m):
+        return True
+    elif m < 1:
+        return False
+    return is_square(n, m - 1)
+
+  /*output: 
+    m=3
+    expected_answer=true
+    return_value=false
+   */
