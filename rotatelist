@@ -1,0 +1,83 @@
+hariprasathk4556
+pythoncoding_basics
+Repository navigation
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+pythoncoding_basics
+/
+Name your file...
+in
+main
+
+Edit
+
+Preview
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution(object):
+    def rotateRight(self, head, k):
+        if not head or not head.next or k == 0:
+            return head
+
+        length = 1
+        tail = head
+        while tail.next:
+            tail = tail.next
+            length +=1
+
+        k = k % length
+        if k == 0:
+            return head
+
+        tail.next = head
+
+        steps = length - k
+        new_tail = head
+        for _ in range(steps - 1):
+            new_tail = new_tail.next
+
+        new_head = new_tail.next
+        new_tail.next = None 
+
+        return new_head
